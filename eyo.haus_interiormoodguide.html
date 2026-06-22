@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)file:///C:/Users/eeeoy/Downloads/interior_mood_guide_1.html -->
+<!-- saved from url=(0059)file:///C:/Users/eeeoy/Downloads/interior_mood_guide_2.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -218,6 +218,30 @@
 
   /* 구분선 */
   .divider { height: 1px; background: #E8E4DE; margin: 0; }
+
+  /* 모바일 반응형 */
+  @media (max-width: 600px) {
+    body { padding: 20px 14px; }
+    .cover { padding: 20px 18px; }
+    .cover h1 { font-size: 18px; }
+    .cover p { font-size: 13px; }
+    .card-top { grid-template-columns: 1fr; }
+    .swatch { min-height: 56vw; }
+    .card-right {
+      border-left: none;
+      border-top: 0.5px solid #F0EDE8;
+      padding: 16px 16px 12px;
+      gap: 10px;
+    }
+    .mood-title { font-size: 15px; }
+    .desc-box { font-size: 12px; padding: 12px 13px; }
+    .card-bottom { padding: 16px 16px 20px; }
+    .detail-list li { font-size: 12px; }
+    .link-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .link-btn { padding: 10px 6px; font-size: 11px; }
+    .section-header h2 { font-size: 15px; }
+    .section-header { margin: 32px 0 16px; }
+  }
 
   /* 푸터 */
   .footer {

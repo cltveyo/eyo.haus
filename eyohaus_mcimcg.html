@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)file:///C:/Users/eeeoy/Downloads/mci_mcg_guide.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCI·MCG 방공제 완벽 가이드</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #0f0f0f;
+    color: #f0f0f0;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .copyright-bar {
+    background: #1a0a0a;
+    border-bottom: 1px solid #ff4d4d33;
+    padding: 10px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: #ff4d4d;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .hero {
+    background: #0f0f0f;
+    padding: 60px 24px 48px;
+    text-align: center;
+    border-bottom: 1px solid #222;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d44;
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 span {
+    color: #ff4d4d;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+
+  .section {
+    margin-top: 40px;
+  }
+
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .section-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ff4d4d;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .card-body {
+    font-size: 13px;
+    color: #999;
+    line-height: 1.75;
+  }
+
+  .card-body strong {
+    color: #ddd;
+    font-weight: 500;
+  }
+
+  .highlight-red { color: #ff4d4d; font-weight: 700; }
+  .highlight-white { color: #fff; font-weight: 500; }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #222;
+    margin: 40px 0 0;
+  }
+
+  /* 지역별 그리드 */
+  .region-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .region-card {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+
+  .region-name {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 6px;
+  }
+
+  .region-amount {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ff4d4d;
+  }
+
+  .region-amount.mild {
+    color: #ff8c42;
+  }
+
+  /* 시뮬레이션 */
+  .sim-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sim-tag {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 12px;
+  }
+
+  .sim-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+  }
+
+  .sim-row:last-child { border-bottom: none; }
+  .sim-label { font-size: 13px; color: #888; }
+  .sim-value { font-size: 14px; font-weight: 500; color: #fff; }
+  .sim-value.red { color: #ff4d4d; }
+  .sim-value.green { color: #4dff91; }
+
+  /* 계산기 */
+  .calc-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .input-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  select, input[type="number"] {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  select:focus, input:focus {
+    border-color: #ff4d4d;
+  }
+
+  select option {
+    background: #1a1a1a;
+  }
+
+  .result-box {
+    background: #111;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-top: 4px;
+  }
+
+  .result-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .result-row:last-child { border-bottom: none; }
+  .result-label { font-size: 12px; color: #666; }
+  .result-value { font-size: 14px; font-weight: 700; color: #fff; }
+  .result-value.red { color: #ff4d4d; }
+  .result-value.green { color: #4dff91; }
+
+  .disclaimer {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+
+  /* 대응 방법 */
+  .tip-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tip-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .tip-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    color: #ff4d4d;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .tip-content { flex: 1; }
+
+  .tip-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+
+  .tip-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.65;
+  }
+
+  .warning-box {
+    background: #1a1200;
+    border: 1px solid #3d2f00;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-top: 16px;
+  }
+
+  .warning-text {
+    font-size: 12px;
+    color: #b8860b;
+    line-height: 1.65;
+  }
+
+  /* 설명 카드 내 dot */
+  .dot-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+
+  .dot-row:last-child { margin-bottom: 0; }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ff4d4d;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="copyright-bar">
+  <span>© @eyohaus 가 직접 만든 자료입니다. 본 자료의 무단 재배포·재공유를 금지합니다. 소중한 자료, 함께 지켜주세요 🙏</span>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">긴급 정보</div>
+  <h1>주담대 받아도<br><span>5,500만원</span> 못 받아요</h1>
+  <p class="hero-sub">MCI·MCG 가입 불가 — 방공제 완벽 정리</p>
+</div>
+
+<div class="container">
+
+  <!-- ④ 세부 설명 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">1</div>
+      <span class="section-title">MCI·MCG가 뭔가요?</span>
+    </div>
+
+    <div class="card">
+      <p class="card-title">한 줄 요약</p>
+      <p class="card-body">주담대 받을 때 <span class="highlight-red">방공제를 면제</span>해주는 보험·보증 상품이에요.</p>
+    </div>
+
+    <div class="card">
+      <p class="card-title">방공제가 뭔데요?</p>
+      <p class="card-body">집이 경매로 넘어갈 경우, 은행보다 세입자 보증금을 먼저 보호해야 해요.<br><br>그래서 은행은 대출금 계산할 때 <span class="highlight-white">세입자 보호 금액을 미리 빼요.</span> 이게 방공제예요.<br><br>MCI·MCG에 가입하면 이 방공제를 빼지 않고 대출 한도를 최대로 받을 수 있었어요.</p>
+    </div>
+
+    <div class="card">
+      <p class="card-title">MCI vs MCG 차이</p>
+      <div class="dot-row">
+        <div class="dot"></div>
+        <p class="card-body"><strong>MCI</strong> (모기지신용보험) — SGI서울보증 운영</p>
+      </div>
+      <div class="dot-row">
+        <div class="dot"></div>
+        <p class="card-body"><strong>MCG</strong> (모기지신용보증) — 한국주택금융공사 운영</p>
+      </div>
+      <p class="card-body" style="margin-top:10px">둘 다 방공제 면제 역할은 같아요. 은행마다 취급 상품이 달라요.</p>
+    </div>
+
+    <div class="card">
+      <p class="card-title">왜 지금 막혔나요?</p>
+      <p class="card-body">금융당국이 가계대출 총량을 줄이라고 주문하면서, 은행들이 MCI·MCG 가입을 제한하기 시작했어요.<br><br>금리를 올리지 않고도 대출 한도를 줄일 수 있는 수단으로 활용 중이에요.<br><br><span class="highlight-red">농협·국민·하나은행</span>까지 줄줄이 가입 불가 공지 중이에요.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ① 지역별 한도 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">2</div>
+      <span class="section-title">지역별 대출 한도 감소액</span>
+    </div>
+
+    <div class="card">
+      <p class="card-body" style="margin-bottom:14px">MCI·MCG 가입 불가 시, 이만큼 대출 한도가 줄어요.</p>
+      <div class="region-grid">
+        <div class="region-card">
+          <p class="region-name">서울</p>
+          <p class="region-amount">-5,500만원</p>
+        </div>
+        <div class="region-card">
+          <p class="region-name">경기도</p>
+          <p class="region-amount">-4,800만원</p>
+        </div>
+        <div class="region-card">
+          <p class="region-name">기타 광역시</p>
+          <p class="region-amount mild">-2,800만원</p>
+        </div>
+        <div class="region-card">
+          <p class="region-name">그 외 지역</p>
+          <p class="region-amount mild">-2,500만원</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ③ 시뮬레이션 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">3</div>
+      <span class="section-title">대출 전/후 시뮬레이션</span>
+    </div>
+
+    <div class="sim-card">
+      <p class="sim-tag">서울 기준 — 6억 신청 시</p>
+      <div class="sim-row">
+        <span class="sim-label">기존 (MCI·MCG 가입)</span>
+        <span class="sim-value green">6억 입금</span>
+      </div>
+      <div class="sim-row">
+        <span class="sim-label">현재 (가입 불가)</span>
+        <span class="sim-value red">5억 4,500만원 입금</span>
+      </div>
+      <div class="sim-row">
+        <span class="sim-label">차액</span>
+        <span class="sim-value red">5,500만원 부족</span>
+      </div>
+    </div>
+
+    <div class="sim-card">
+      <p class="sim-tag">경기도 기준 — 6억 신청 시</p>
+      <div class="sim-row">
+        <span class="sim-label">기존 (MCI·MCG 가입)</span>
+        <span class="sim-value green">6억 입금</span>
+      </div>
+      <div class="sim-row">
+        <span class="sim-label">현재 (가입 불가)</span>
+        <span class="sim-value red">5억 5,200만원 입금</span>
+      </div>
+      <div class="sim-row">
+        <span class="sim-label">차액</span>
+        <span class="sim-value red">4,800만원 부족</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 계산기 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">4</div>
+      <span class="section-title">방공제 계산기</span>
+    </div>
+
+    <div class="calc-card">
+      <label class="input-label">지역 선택</label>
+      <select id="region" onchange="calc()">
+        <option value="5500">서울 (-5,500만원)</option>
+        <option value="4800">경기도 (-4,800만원)</option>
+        <option value="2800">기타 광역시 (-2,800만원)</option>
+        <option value="2500">그 외 지역 (-2,500만원)</option>
+      </select>
+
+      <label class="input-label">신청 대출 금액 (억원)</label>
+      <input type="number" id="amount" value="6" min="0.1" max="100" step="0.1" oninput="calc()" placeholder="예: 6">
+
+      <div class="result-box">
+        <div class="result-row">
+          <span class="result-label">신청 금액</span>
+          <span class="result-value" id="r-request">6억원</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">방공제 차감</span>
+          <span class="result-value red" id="r-deduct">-5,500만원</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">실제 입금액</span>
+          <span class="result-value green" id="r-actual">5억 4,500만원</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">부족한 현금</span>
+          <span class="result-value red" id="r-short">5,500만원 더 필요</span>
+        </div>
+      </div>
+      <p class="disclaimer">* LTV, DSR, 소득 등에 따라 실제 한도는 달라질 수 있어요. 참고용으로만 활용하세요.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 대응 방법 -->
+  <div class="section">
+    <div class="section-label">
+      <div class="section-num">5</div>
+      <span class="section-title">지금 당장 할 수 있는 것들</span>
+    </div>
+
+    <div class="tip-list">
+      <div class="tip-card">
+        <div class="tip-num">1</div>
+        <div class="tip-content">
+          <p class="tip-title">잔금 일정 조율하기</p>
+          <p class="tip-desc">MCI·MCG 재개 시점을 고려해 잔금일을 뒤로 미루는 것도 방법이에요. 매도자와 협의 가능한지 먼저 확인해보세요.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">2</div>
+        <div class="tip-content">
+          <p class="tip-title">다른 은행 알아보기</p>
+          <p class="tip-desc">은행마다 제한 시점이 달라요. 아직 가입 가능한 은행이 있을 수 있으니 여러 곳에 문의해보세요.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">3</div>
+        <div class="tip-content">
+          <p class="tip-title">부족한 현금 미리 파악하기</p>
+          <p class="tip-desc">위 계산기로 부족한 금액을 먼저 확인하고, 비상금·마이너스통장·가족 차용 등 자금 조달 방법을 미리 준비해두세요.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">4</div>
+        <div class="tip-content">
+          <p class="tip-title">대출 모집인·은행 담당자 상담</p>
+          <p class="tip-desc">상황이 빠르게 바뀌고 있어요. 직접 은행 창구나 대출 모집인에게 현재 가능한 옵션을 확인하는 게 가장 정확해요.</p>
+        </div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">5</div>
+        <div class="tip-content">
+          <p class="tip-title">계약 전이라면 특약 넣기</p>
+          <p class="tip-desc">아직 계약 전이라면 "대출 불가 시 계약 해제" 특약을 넣어두면 리스크를 줄일 수 있어요.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <p class="warning-text">위 내용은 일반적인 참고 정보예요. 개인 상황에 따라 다를 수 있으니 반드시 전문가(은행, 공인중개사, 대출 모집인)와 상담하세요.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function fmt(n) {
+  if (n >= 100000000) {
+    var uk = Math.floor(n / 100000000);
+    var man = Math.round((n % 100000000) / 10000);
+    if (man === 0) return uk + '억원';
+    return uk + '억 ' + man.toLocaleString() + '만원';
+  }
+  return Math.round(n / 10000).toLocaleString() + '만원';
+}
+
+function calc() {
+  var amt = parseFloat(document.getElementById('amount').value) || 0;
+  var deduct = parseInt(document.getElementById('region').value) || 5500;
+  var amtWon = Math.round(amt * 100000000);
+  var deductWon = deduct * 10000;
+  var actual = amtWon - deductWon;
+
+  document.getElementById('r-request').textContent = fmt(amtWon);
+  document.getElementById('r-deduct').textContent = '-' + deduct.toLocaleString() + '만원';
+  document.getElementById('r-actual').textContent = actual > 0 ? fmt(actual) : '0원';
+  document.getElementById('r-short').textContent = deduct.toLocaleString() + '만원 더 필요';
+}
+
+calc();
+</script>
+
+
+
+</body></html>
